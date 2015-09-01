@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--wrap the menu items with group,
+     and set checkablebehavior as single so only one item is highlighted in the nav menu-->
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/menu_drawer_homepage"
+            android:title="@string/homepage"
+            android:checked="true"
+            android:icon="@mipmap/ic_home_black_24dp"/>
+
+        <item android:id="@+id/menu_drawer_history"
+            android:title="@string/history"
+            android:icon="@mipmap/ic_history_black_24dp"/>
+    </group>
+
+    <!-- set sub items-->
+    <item
+        android:id="@+id/nav_subheader"
+        android:title="@string/sub_header">
+        <menu>
+            <item
+                android:id="@+id/sub_settings"
+                android:icon="@mipmap/ic_settings_black_24dp"
+                android:title="@string/sub_setting" />
+        </menu>
+    </item>
+
+</menu>

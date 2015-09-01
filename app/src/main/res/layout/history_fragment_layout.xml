@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"/>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:mcv_showOtherDates="true"
+        app:mcv_arrowColor="@color/LightSlateBlue"
+        app:mcv_weekDayLabels="@array/weekDayLabels"
+        app:mcv_monthLabels="@array/monthLabels"/>
+        <!--app:mcv_arrowColor="color"
+        app:mcv_selectionColor="color"
+        app:mcv_headerTextAppearance="style"
+        app:mcv_dateTextAppearance="style"
+        app:mcv_weekDayTextAppearance="style"
+        app:mcv_weekDayLabels="array"
+        app:mcv_monthLabels="array"
+        app:mcv_tileSize="dimension"
+        app:mcv_firstDayOfWeek="enum"
+        app:mcv_leftArrowMask="drawable"
+        app:mcv_rightArrowMask="drawable"
+        />-->
+
+</LinearLayout>

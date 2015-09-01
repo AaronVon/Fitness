@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tab_layout">#03BCD4</color>
+    <color name="drawer_header">#01BCD6</color>
+    <color name="colorPrimary">#03BCD4</color>
+    <color name="item_tint">#AEEEEE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="LightSlateBlue">#8470FF</color>
+
+    <color name="indicator_1">#ff9000</color>
+    <color name="indicatior_2">#00BCD4</color>
+    <color name="indicator_3">#c52935</color>
+    <color name="indicator_4">#8f38b2</color>
+</resources>
