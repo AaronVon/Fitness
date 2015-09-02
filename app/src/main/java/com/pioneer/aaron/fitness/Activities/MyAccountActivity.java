@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.pioneer.aaron.fitness.R;
 
@@ -24,7 +25,6 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 public class MyAccountActivity extends AppCompatActivity{
 
     private Toolbar mToolbar;
-    private RecyclerView mRecyclerView;
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
 
     @Override
@@ -37,7 +37,6 @@ public class MyAccountActivity extends AppCompatActivity{
 
     private void init() {
         mToolbar = (Toolbar) findViewById(R.id.account_tool_bar);
-        mRecyclerView = (RecyclerView) findViewById(R.id.account_recycler_view);
         mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.account_collapsing_toolbar);
 
         setSupportActionBar(mToolbar);
@@ -45,27 +44,30 @@ public class MyAccountActivity extends AppCompatActivity{
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         mCollapsingToolbarLayout.setTitle(getString(R.string.account));
+        mCollapsingToolbarLayout.setExpandedTitleColor(android.R.color.transparent);
 
-        //I'm not sure what is LinearLayoutManager for
+        supportPostponeEnterTransition();
+
+        /*//I'm not sure what is LinearLayoutManager for
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
-        mRecyclerView.setAdapter();
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);*/
 
-        //automatic get the scrimColor using Palette and set it to CollapsingToolBar
+        //automatic get the color set using Palette and set it to CollapsingToolBar
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.me);
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
             @Override
             public void onGenerated(Palette palette) {
                 int defaultColor = getResources().getColor(R.color.colorPrimary);
                 int defaultTitleColor = getResources().getColor(R.color.white);
-                int bgColor = palette.getDarkVibrantColor(defaultColor);
+                int bgColor = palette.getMutedColor(defaultColor);
                 int titleColor = palette.getLightVibrantColor(defaultTitleColor);
                 mCollapsingToolbarLayout.setContentScrimColor(bgColor);
                 mCollapsingToolbarLayout.setCollapsedTitleTextColor(titleColor);
                 mCollapsingToolbarLayout.setExpandedTitleColor(titleColor);
             }
         });
+
+
     }
 
     @Override

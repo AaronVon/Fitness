@@ -7,11 +7,11 @@
         <item android:id="@+id/menu_drawer_homepage"
             android:title="@string/homepage"
             android:checked="true"
-            android:icon="@mipmap/ic_home_black_24dp"/>
+            android:icon="@mipmap/ic_home_black_48dp"/>
 
         <item android:id="@+id/menu_drawer_history"
             android:title="@string/history"
-            android:icon="@mipmap/ic_history_black_24dp"/>
+            android:icon="@mipmap/ic_history_black_48dp"/>
     </group>
 
     <!-- set sub items-->
@@ -21,7 +21,7 @@
         <menu>
             <item
                 android:id="@+id/sub_settings"
-                android:icon="@mipmap/ic_settings_black_24dp"
+                android:icon="@mipmap/ic_settings_black_48dp"
                 android:title="@string/sub_setting" />
         </menu>
     </item>

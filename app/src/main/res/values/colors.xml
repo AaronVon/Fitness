@@ -7,6 +7,7 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="LightSlateBlue">#8470FF</color>
+    <color name="MediumSlateBlue">#7B68EE</color>
 
     <color name="indicator_1">#ff9000</color>
     <color name="indicatior_2">#00BCD4</color>
