@@ -14,6 +14,8 @@ import com.pioneer.aaron.fitness.R;
  */
 public class CircleFragment extends Fragment {
 
+    private View rootView;
+
     public static CircleFragment newInstance() {
         return new CircleFragment();
     }
@@ -21,8 +23,14 @@ public class CircleFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.circle_fragment_layout, container, false);
+        rootView = inflater.inflate(R.layout.circle_fragment_layout, container, false);
+
+        initFragment();
         return rootView;
+    }
+
+    private void initFragment() {
+
     }
 
 }
