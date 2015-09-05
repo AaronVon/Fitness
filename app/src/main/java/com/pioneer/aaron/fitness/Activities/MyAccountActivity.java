@@ -17,7 +17,6 @@ import android.widget.ImageView;
 
 import com.pioneer.aaron.fitness.R;
 
-import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
 /**
  * Created by Aaron on 9/1/15.
