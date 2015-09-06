@@ -21,8 +21,10 @@ import android.widget.TextView;
 import com.pioneer.aaron.fitness.Activities.MyAccountActivity;
 import com.pioneer.aaron.fitness.Fragments.ActivityFragment;
 import com.pioneer.aaron.fitness.Fragments.CircleFragment;
+import com.pioneer.aaron.fitness.Fragments.GamesFragment;
 import com.pioneer.aaron.fitness.Fragments.HistoryFragment;
 import com.pioneer.aaron.fitness.Fragments.MainFragment;
+import com.pioneer.aaron.fitness.Fragments.PlaygroundFragment;
 import com.pioneer.aaron.fitness.Utils.Constant;
 import com.pioneer.aaron.fitness.Utils.RoundedImageView;
 
@@ -86,6 +88,16 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.menu_drawer_history:
                             fragmentManager.beginTransaction()
                                     .replace(R.id.main_content, HistoryFragment.newInstance())
+                                    .commit();
+                            break;
+                        case R.id.menu_drawer_playground:
+                            fragmentManager.beginTransaction()
+                                    .replace(R.id.main_content, PlaygroundFragment.newInstance())
+                                    .commit();
+                            break;
+                        case R.id.menu_drawer_games:
+                            fragmentManager.beginTransaction()
+                                    .replace(R.id.main_content, GamesFragment.newInstance())
                                     .commit();
                             break;
                     }

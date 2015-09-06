@@ -14,7 +14,24 @@
             android:icon="@mipmap/ic_history_black_48dp"/>
     </group>
 
-    <!-- set sub items-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/discovery"
+            android:title="@string/discovery">
+            <menu>
+                <item
+                    android:id="@+id/menu_drawer_playground"
+                    android:icon="@mipmap/ic_local_play_black_48dp"
+                    android:title="@string/playground" />
+                <item
+                    android:id="@+id/menu_drawer_games"
+                    android:icon="@mipmap/ic_games_black_48dp"
+                    android:title="@string/games" />
+            </menu>
+        </item>
+    </group>
+
+
     <item
         android:id="@+id/nav_subheader"
         android:title="@string/sub_header">
