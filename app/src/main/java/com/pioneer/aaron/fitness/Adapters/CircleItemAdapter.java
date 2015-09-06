@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.pioneer.aaron.fitness.Interface.RecyclerViewItemClickListener;
@@ -35,21 +37,31 @@ public class CircleItemAdapter extends RecyclerView.Adapter<CircleItemAdapter.It
         CircleItemModel model = modelList.get(position);
         holder.user_thumbnail.setImageResource(model.user_thumbnail);
         holder.user_id.setText(model.user_id);
+
         if (model.tag_run) {
-            holder.tag_run.setText("Run");
+            setMargins(holder.tag_run);
+            holder.tag_run.setText("run");
         } else {
             holder.tag_run.setBackgroundResource(R.drawable.tag_null_style);
         }
         if (model.tag_walk) {
-            holder.tag_walk.setText("Walk");
+            setMargins(holder.tag_walk);
+            holder.tag_walk.setText("walk");
         } else {
             holder.tag_walk.setBackgroundResource(R.drawable.tag_null_style);
         }
         if (model.tag_swim) {
-            holder.tag_swim.setText("Swim");
+            setMargins(holder.tag_swim);
+            holder.tag_swim.setText("swim");
         } else {
             holder.tag_swim.setBackgroundResource(R.drawable.tag_null_style);
         }
+    }
+
+    private void setMargins(TextView textView) {
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(7, 0, 7, 0);
+        textView.setLayoutParams(layoutParams);
     }
 
     @Override

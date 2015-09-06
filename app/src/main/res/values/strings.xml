@@ -16,6 +16,7 @@
     <string name="sub_header">More</string>
     <string name="sub_setting">Setting</string>
 
+    <string name="location">location</string>
     //TabLayout items
     <string name="activity">Activity</string>
     <string name="circle">Circle</string>

@@ -25,38 +25,58 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="user_id"
             android:id="@+id/user_id"
-            android:layout_marginLeft="10dp"
             android:layout_alignTop="@+id/user_thumbnail"
             android:layout_toEndOf="@+id/user_thumbnail" />
 
-        <TextView
+        <RelativeLayout
+            android:id="@+id/run_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:background="@drawable/tag_run_style"
-            android:id="@+id/user_tag_run"
             android:layout_alignBottom="@+id/user_thumbnail"
-            android:layout_alignStart="@+id/user_id" />
+            android:layout_alignStart="@+id/user_id">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:background="@drawable/tag_run_style"
+                android:textColor="@android:color/white"
+                android:id="@+id/user_tag_run" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/swim_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:background="@drawable/tag_swim_style"
-            android:id="@+id/user_tag_swim"
-            android:layout_marginLeft="10dp"
-            android:layout_alignBottom="@+id/user_tag_run"
-            android:layout_toEndOf="@+id/user_tag_run" />
+            android:layout_alignBottom="@+id/run_layout"
+            android:layout_toEndOf="@+id/run_layout">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:background="@drawable/tag_swim_style"
+                android:textColor="@android:color/white"
+                android:id="@+id/user_tag_swim" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:background="@drawable/tag_walk_style"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/user_tag_walk"
-            android:layout_alignBottom="@+id/user_tag_swim"
-            android:layout_toEndOf="@+id/user_tag_swim" />
+            android:layout_alignBottom="@+id/swim_layout"
+            android:layout_toEndOf="@+id/swim_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:background="@drawable/tag_walk_style"
+                android:textColor="@android:color/white"
+                android:id="@+id/user_tag_walk"/>
+        </RelativeLayout>
+
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>
