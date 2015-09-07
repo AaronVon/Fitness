@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -37,6 +36,7 @@ public class CircleItemAdapter extends RecyclerView.Adapter<CircleItemAdapter.It
         CircleItemModel model = modelList.get(position);
         holder.user_thumbnail.setImageResource(model.user_thumbnail);
         holder.user_id.setText(model.user_id);
+        holder.user_slogan.setText(model.user_slogan);
 
         if (model.tag_run) {
             setMargins(holder.tag_run);
@@ -75,6 +75,7 @@ public class CircleItemAdapter extends RecyclerView.Adapter<CircleItemAdapter.It
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private ImageView user_thumbnail;
+        private TextView user_slogan;
         private TextView tag_walk, tag_run, tag_swim;
         private TextView user_id;
         private RecyclerViewItemClickListener mItemClickListener;
@@ -83,6 +84,7 @@ public class CircleItemAdapter extends RecyclerView.Adapter<CircleItemAdapter.It
             super(itemView);
             user_thumbnail = (ImageView) itemView.findViewById(R.id.user_thumbnail);
             user_id = (TextView) itemView.findViewById(R.id.user_id);
+            user_slogan = (TextView) itemView.findViewById(R.id.user_slogan);
             tag_walk = (TextView) itemView.findViewById(R.id.user_tag_walk);
             tag_run = (TextView) itemView.findViewById(R.id.user_tag_run);
             tag_swim = (TextView) itemView.findViewById(R.id.user_tag_swim);

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="4dp"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="15dp"
+            android:id="@+id/playground_thumnail"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="playground_id"
+            android:id="@+id/playground_id"
+            android:layout_alignTop="@+id/playground_thumnail"
+            android:layout_toEndOf="@+id/playground_thumnail" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="playground_location"
+            android:id="@+id/playground_location"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/playground_id"
+            android:layout_toEndOf="@+id/playground_thumnail" />
+
+        <RelativeLayout
+            android:id="@+id/run_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playground_location"
+            android:layout_toEndOf="@+id/playground_thumnail">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/white"
+                android:id="@+id/playground_tag_run" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/swim_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playground_location"
+            android:layout_toEndOf="@+id/run_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/white"
+                android:id="@+id/playground_tag_swim" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/walk_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playground_location"
+            android:layout_toEndOf="@+id/swim_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/white"
+                android:id="@+id/playground_tag_walk"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/exercise_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playground_location"
+            android:layout_toEndOf="@+id/walk_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/white"
+                android:id="@+id/playground_tag_exercise"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/yoga_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playground_location"
+            android:layout_toEndOf="@+id/exercise_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/white"
+                android:id="@+id/playground_tag_yoga"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bike_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playground_location"
+            android:layout_toEndOf="@+id/yoga_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/white"
+                android:id="@+id/playground_tag_bike"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/badminton_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playground_location"
+            android:layout_toEndOf="@+id/bike_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/white"
+                android:id="@+id/playground_tag_badminton"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

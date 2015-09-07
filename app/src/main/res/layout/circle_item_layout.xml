@@ -28,6 +28,16 @@
             android:layout_alignTop="@+id/user_thumbnail"
             android:layout_toEndOf="@+id/user_thumbnail" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="user_slogan"
+            android:id="@+id/user_slogan"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/user_id"
+            android:layout_alignStart="@+id/user_id" />
+
         <RelativeLayout
             android:id="@+id/run_layout"
             android:layout_width="wrap_content"
@@ -76,6 +86,8 @@
                 android:textColor="@android:color/white"
                 android:id="@+id/user_tag_walk"/>
         </RelativeLayout>
+
+
 
     </RelativeLayout>
 

@@ -23,4 +23,18 @@ public interface Constant {
 
     //DB
     String DB_NAME = "fitnesshistory.db";
+
+    //playground keys
+    String PLAYGROUND_NUM = "playground_num";
+    String PLAYGROUND_TYPE = "playground_type";
+    String PLAYGROUND_MA = "playground_ma";
+    String PLAYGROUND_TRACK = "playground_track";
+    String PLAYGROUND_BH = "playground_bh";
+    String PLAYGROUND_PRICE = "playground_price";
+    String PLAYGROUND_BRIEF = "playground_brief";
+    String PLAYGROUND_THUMBNAIL = "playground_thumnnail";
+    String PLAYGROUND_ID = "playground_id";
+    String PLAYGROUND_BOOLEANS = "playground_booleans";
+    String PLAYGROUND_LOCATION = "playground_location";
+
 }

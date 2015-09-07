@@ -78,12 +78,12 @@ public class CircleFragment extends Fragment {
 
     private void initDataSet() {
         dataSet = new ArrayList<>();
-        dataSet.add(new CircleItemModel(R.drawable.user_1, "Jason", true, true, false));
-        dataSet.add(new CircleItemModel(R.drawable.user_2, "Mark", false, true, false));
-        dataSet.add(new CircleItemModel(R.drawable.user_3, "Chris", true, true, true));
-        dataSet.add(new CircleItemModel(R.drawable.user_4, "Eric", true, false, false));
-        dataSet.add(new CircleItemModel(R.drawable.user_5, "Alex", true, true, true));
-        dataSet.add(new CircleItemModel(R.drawable.user_6, "Joseph", true, false, true));
+        dataSet.add(new CircleItemModel(R.drawable.user_1, "Jason", "坚持就可以", true, true, false));
+        dataSet.add(new CircleItemModel(R.drawable.user_2, "Mark", "you stop you die", false, true, false));
+        dataSet.add(new CircleItemModel(R.drawable.user_3, "Chris", "请叫我健身小达人", true, true, true));
+        dataSet.add(new CircleItemModel(R.drawable.user_4, "Eric", "他啥也没说", true, false, false));
+        dataSet.add(new CircleItemModel(R.drawable.user_5, "Alex", "我要瘦到100", true, true, true));
+        dataSet.add(new CircleItemModel(R.drawable.user_6, "Joseph", "keep moving", true, false, true));
     }
 
 
