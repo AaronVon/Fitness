@@ -1,6 +1,9 @@
 package com.pioneer.aaron.fitness.Activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -19,11 +22,6 @@ import com.pioneer.aaron.fitness.Utils.Constant;
 public class PlaygroundDetails extends AppCompatActivity {
     private Toolbar mToolbar;
 
-    //layout views
-    private ImageView playground_thumbnail;
-    private TextView playground_id, playground_location, playground_type,
-            playground_ma, playground_track, playground_bh, playground_price, playground_brief;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -41,7 +39,7 @@ public class PlaygroundDetails extends AppCompatActivity {
         actionBar.setHomeButtonEnabled(true);
 
         //layout views
-        Bundle bundle = getIntent().getExtras();
+        final Bundle bundle = getIntent().getExtras();
         ((ImageView) findViewById(R.id.playground_thumnail)).setImageResource(bundle.getInt(Constant.PLAYGROUND_THUMBNAIL));
         ((TextView) findViewById(R.id.playground_id)).setText(bundle.getString(Constant.PLAYGROUND_ID));
         ((TextView) findViewById(R.id.playground_location)).setText(bundle.getString(Constant.PLAYGROUND_LOCATION));
@@ -52,9 +50,31 @@ public class PlaygroundDetails extends AppCompatActivity {
         ((TextView) findViewById(R.id.price)).setText(bundle.getString(Constant.PLAYGROUND_PRICE));
         ((TextView) findViewById(R.id.brief)).setText(bundle.getString(Constant.PLAYGROUND_BRIEF));
 
+        final String phone_num;
+        phone_num = bundle.getString(Constant.PLAYGROUND_NUM);
         ((ImageButton)findViewById(R.id.phone)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (phone_num.equals("0")) {
+                    Snackbar.make(findViewById(R.id.parent_layout), "no number found", Snackbar.LENGTH_SHORT)
+                            .setAction("OK", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            })
+                            .show();
+                } else {
+                    Snackbar.make(findViewById(R.id.parent_layout), "Dial " + phone_num, Snackbar.LENGTH_LONG)
+                            .setAction("Dial", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent dialIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone_num));
+                                    startActivity(dialIntent);
+                                }
+                            })
+                            .show();
+                }
 
             }
         });

@@ -13,4 +13,6 @@
     <color name="indicatior_2">#00BCD4</color>
     <color name="indicator_3">#c52935</color>
     <color name="indicator_4">#8f38b2</color>
+
+    <color name="layout_background">#ededed</color>
 </resources>

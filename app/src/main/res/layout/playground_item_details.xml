@@ -1,5 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:background="@color/layout_background"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -37,6 +39,7 @@
 
             <RelativeLayout
                 android:id="@+id/basic_layout"
+                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -168,6 +171,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:layout_marginTop="3dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
@@ -208,6 +212,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:layout_marginTop="10dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp">
@@ -288,6 +293,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:layout_marginTop="10dp"
                 android:paddingTop="18dp"
                 android:paddingBottom="18dp">
@@ -338,6 +344,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:layout_marginTop="10dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp">
@@ -371,6 +378,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:layout_marginTop="3dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp">
@@ -397,6 +405,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:layout_marginTop="3dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp">
