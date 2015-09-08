@@ -70,7 +70,8 @@ public class HistoryFragment extends Fragment {
             int month = calendarDay.getMonth();
             int day = calendarDay.getDay();
 
-            HistoryDialogFragment.newInstance(year, month, day).show(((AppCompatActivity)getActivity()).getSupportFragmentManager(), Constant.TAG_HIS_DIALOG);
+            HistoryDialogFragment.newInstance(year, month, day)
+                    .show((getActivity()).getSupportFragmentManager(), Constant.TAG_HIS_DIALOG);
         }
     };
 }

@@ -11,6 +11,7 @@ public interface Constant {
     String HIS_MONTH = "month";
     String HIS_DAY = "day";
     String TAG_HIS_DIALOG = "history_dialog_fragment";
+    String TAG_TRA_DIALOG = "track_dialog_fragment";
 
     //Fitness constant
     String BPM_FEILD = "com.google.heart_rate.summary";
@@ -36,5 +37,16 @@ public interface Constant {
     String PLAYGROUND_ID = "playground_id";
     String PLAYGROUND_BOOLEANS = "playground_booleans";
     String PLAYGROUND_LOCATION = "playground_location";
+
+    //people keys
+    String P_ID = "p_id";
+    String P_THUMBNAIL = "p_thumbnail";
+    String P_SLOGAN = "p_slogan";
+    String P_DISTANCE = "p_distance";
+    String P_FANS = "p_fans";
+    String P_ACHIEVE = "p_achieve";
+    String P_TRACK_1 = "p_track_1";
+    String P_TRACK_2 = "p_track_2";
+    String P_TRACK_3 = "p_track_3";
 
 }

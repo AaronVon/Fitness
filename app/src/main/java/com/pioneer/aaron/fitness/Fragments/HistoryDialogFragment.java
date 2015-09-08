@@ -18,7 +18,6 @@ public class HistoryDialogFragment extends DialogFragment {
 
     private View rootView;
     private int year, month, day;
-
     public static HistoryDialogFragment newInstance(int year, int month, int day) {
         HistoryDialogFragment historyDialogFragment = new HistoryDialogFragment();
         Bundle mBundle = new Bundle();
