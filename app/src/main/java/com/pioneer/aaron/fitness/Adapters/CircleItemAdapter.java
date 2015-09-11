@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.pioneer.aaron.fitness.Interface.RecyclerViewItemClickListener;
 import com.pioneer.aaron.fitness.R;
 
@@ -20,9 +23,19 @@ public class CircleItemAdapter extends RecyclerView.Adapter<CircleItemAdapter.It
 
     private List<CircleItemModel> modelList;
     private RecyclerViewItemClickListener itemClickListener;
+    private ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
+    private DisplayImageOptions options;
 
     public CircleItemAdapter(List<CircleItemModel> modelList) {
         this.modelList = modelList;
+        options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(null)
+                .showImageForEmptyUri(null)
+                .showImageOnFail(null)
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .considerExifParams(false)
+                .build();
     }
 
     @Override
@@ -34,7 +47,8 @@ public class CircleItemAdapter extends RecyclerView.Adapter<CircleItemAdapter.It
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         CircleItemModel model = modelList.get(position);
-        holder.user_thumbnail.setImageResource(model.user_thumbnail);
+//        holder.user_thumbnail.setImageResource(model.user_thumbnail);
+        ImageLoader.getInstance().displayImage("drawable://" + model.user_thumbnail, holder.user_thumbnail, options, animateFirstListener);
         holder.user_id.setText(model.user_id);
         holder.user_slogan.setText(model.user_slogan);
 

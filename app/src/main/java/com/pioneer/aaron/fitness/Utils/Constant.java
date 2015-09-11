@@ -49,4 +49,5 @@ public interface Constant {
     String P_TRACK_2 = "p_track_2";
     String P_TRACK_3 = "p_track_3";
 
+    boolean DEVELOPER_MODE = false;
 }

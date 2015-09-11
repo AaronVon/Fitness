@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.pioneer.aaron.fitness.Interface.RecyclerViewItemClickListener;
 import com.pioneer.aaron.fitness.R;
 
@@ -19,9 +22,19 @@ import java.util.List;
 public class PlaygroundItemAdapter extends RecyclerView.Adapter<PlaygroundItemAdapter.ItemViewHolder>{
     private List<PlaygroundItemModel> dataSet;
     private RecyclerViewItemClickListener itemClickListener;
+    private ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
+    private DisplayImageOptions options;
 
     public PlaygroundItemAdapter(List<PlaygroundItemModel> dataSet) {
         this.dataSet = dataSet;
+        options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(null)
+                .showImageForEmptyUri(null)
+                .showImageOnFail(null)
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .considerExifParams(false)
+                .build();
     }
 
     @Override
@@ -33,7 +46,8 @@ public class PlaygroundItemAdapter extends RecyclerView.Adapter<PlaygroundItemAd
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         PlaygroundItemModel data = dataSet.get(position);
-        holder.playground_thumbnail.setImageResource(data.playground_thumbnail);
+//        holder.playground_thumbnail.setImageResource(data.playground_thumbnail);
+        ImageLoader.getInstance().displayImage("drawable://" + data.playground_thumbnail, holder.playground_thumbnail, options, animateFirstListener);
         holder.playground_id.setText(data.playground_id);
         holder.playground_location.setText(data.playground_location);
         for (int i = 0; i < data.tag_Booleans.length; ++i) {

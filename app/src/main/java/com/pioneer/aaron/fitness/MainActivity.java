@@ -1,5 +1,6 @@
 package com.pioneer.aaron.fitness;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.BitmapFactory;
@@ -18,6 +19,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.pioneer.aaron.fitness.Activities.MyAccountActivity;
 import com.pioneer.aaron.fitness.Fragments.ActivityFragment;
 import com.pioneer.aaron.fitness.Fragments.CircleFragment;
