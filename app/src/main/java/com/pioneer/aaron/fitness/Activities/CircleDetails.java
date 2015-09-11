@@ -3,6 +3,7 @@ package com.pioneer.aaron.fitness.Activities;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -63,7 +64,7 @@ public class CircleDetails extends AppCompatActivity {
         ((ImageView) findViewById(R.id.track_1)).setImageResource(R.drawable.track_1);
         ((ImageView) findViewById(R.id.track_2)).setImageResource(R.drawable.track_2);
         ((ImageView) findViewById(R.id.track_3)).setImageResource(R.drawable.track_3);
-        findViewById(R.id.track_1).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.track_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TrackDialogFragment.newInstance(R.drawable.track_1)
@@ -83,7 +84,10 @@ public class CircleDetails extends AppCompatActivity {
                 TrackDialogFragment.newInstance(R.drawable.track_3)
                         .show(getSupportFragmentManager(), Constant.TAG_TRA_DIALOG);
             }
-        });
+        });*/
+        findViewById(R.id.track_1).setOnClickListener(imageviewClickListener);
+        findViewById(R.id.track_2).setOnClickListener(imageviewClickListener);
+        findViewById(R.id.track_3).setOnClickListener(imageviewClickListener);
         findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +118,26 @@ public class CircleDetails extends AppCompatActivity {
             }
         });
     }
+
+    private View.OnClickListener imageviewClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.track_1:
+                    TrackDialogFragment.newInstance(R.drawable.track_1)
+                            .show(getSupportFragmentManager(), Constant.TAG_TRA_DIALOG);
+                    break;
+                case R.id.track_2:
+                    TrackDialogFragment.newInstance(R.drawable.track_2)
+                            .show(getSupportFragmentManager(), Constant.TAG_TRA_DIALOG);
+                    break;
+                case R.id.track_3:
+                    TrackDialogFragment.newInstance(R.drawable.track_3)
+                            .show(getSupportFragmentManager(), Constant.TAG_TRA_DIALOG);
+                    break;
+            }
+        }
+    };
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

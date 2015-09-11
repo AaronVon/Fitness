@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/drawer_header">
+    android:background="@color/drawer_header"
+    android:fitsSystemWindows="true">
 
     <ImageView
         android:id="@+id/user_thumbnail"

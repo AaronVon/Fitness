@@ -1,180 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar_layout"
-        android:layout_height="192dp"
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent">
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_height="192dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:expandedTitleMarginStart="48dp"
-            app:expandedTitleMarginEnd="64dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:fitsSystemWindows="true">
 
-            <ImageView
-                android:id="@+id/p_thumbnail"
-                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                app:layout_collapseMode="parallax" />
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleMarginEnd="64dp"
+                android:fitsSystemWindows="true">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/tool_bar"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_width="match_parent"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:layout_collapseMode="pin" />
-        </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.v7.widget.CardView style="@style/cardViewStyle_circle">
-                <RelativeLayout
+                <ImageView
+                    android:id="@+id/p_thumbnail"
+                    app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="16dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="parallax"
+                    android:fitsSystemWindows="true" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Distance: "
-                        android:id="@+id/people_distance" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Followed: "
-                        android:id="@+id/people_fans"
-                        android:layout_marginTop="5dp"
-                        android:layout_below="@+id/people_distance"
-                        android:layout_alignParentStart="true" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Achievement: "
-                        android:id="@+id/people_achievement"
-                        android:layout_marginStart="20dp"
-                        android:layout_alignTop="@+id/people_fans"
-                        android:layout_toEndOf="@+id/people_fans" />
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView style="@style/cardViewStyle_circle">
-                <RelativeLayout
-                    android:layout_marginTop="2dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="16dp"
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/tool_bar"
+                    android:layout_height="?attr/actionBarSize"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:layout_collapseMode="pin"
+                    android:fitsSystemWindows="true" />
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
 
-                    <TextView
-                        android:id="@+id/people_slogan"
-                        android:paddingStart="16dp"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_centerHorizontal="true"
-                        android:text=""
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView style="@style/cardViewStyle_circle">
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                style="@style/cardViewStyle_circle">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingStart="16dp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Track"
-                        android:id="@+id/textView" />
+                        android:paddingStart="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:scaleType="fitCenter"
-                        android:id="@+id/track_1"
-                        android:layout_alignTop="@+id/textView"
-                        android:layout_toEndOf="@+id/textView"
-                        android:layout_marginStart="42dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Distance: "
+                            android:id="@+id/people_distance" />
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:scaleType="fitCenter"
-                        android:id="@+id/track_2"
-                        android:layout_alignTop="@+id/textView"
-                        android:layout_toEndOf="@+id/track_1"
-                        android:layout_marginStart="5dp" />
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:scaleType="fitCenter"
-                        android:id="@+id/track_3"
-                        android:layout_alignTop="@+id/textView"
-                        android:layout_toEndOf="@+id/track_2"
-                        android:layout_marginStart="5dp" />
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                style="@style/cardViewStyle_circle">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:paddingStart="16dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Followed: "
+                            android:id="@+id/people_fans"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/people_distance"
+                            android:layout_alignParentStart="true" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Work Out"
-                        android:id="@+id/textView6"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentStart="true" />
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Achievement: "
+                            android:id="@+id/people_achievement"
+                            android:layout_marginStart="20dp"
+                            android:layout_alignTop="@+id/people_fans"
+                            android:layout_toEndOf="@+id/people_fans" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
 
-    </android.support.v4.widget.NestedScrollView>
+                <android.support.v7.widget.CardView style="@style/cardViewStyle_circle">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        app:layout_anchor="@id/app_bar_layout"
-        app:layout_anchorGravity="bottom|right|end"
-        style="@style/FabStyle"/>
-</android.support.design.widget.CoordinatorLayout>
+                    <RelativeLayout
+                        android:layout_marginTop="2dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/people_slogan"
+                            android:paddingStart="16dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_centerHorizontal="true"
+                            android:text=""
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView style="@style/cardViewStyle_circle">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingStart="16dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Track"
+                            android:id="@+id/textView" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="fitCenter"
+                            android:id="@+id/track_1"
+                            android:layout_alignTop="@+id/textView"
+                            android:layout_toEndOf="@+id/textView"
+                            android:layout_marginStart="42dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="fitCenter"
+                            android:id="@+id/track_2"
+                            android:layout_alignTop="@+id/textView"
+                            android:layout_toEndOf="@+id/track_1"
+                            android:layout_marginStart="5dp" />
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="fitCenter"
+                            android:id="@+id/track_3"
+                            android:layout_alignTop="@+id/textView"
+                            android:layout_toEndOf="@+id/track_2"
+                            android:layout_marginStart="5dp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView style="@style/cardViewStyle_circle">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:paddingStart="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Work Out"
+                            android:id="@+id/textView6"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            app:layout_anchor="@id/app_bar_layout"
+            app:layout_anchorGravity="bottom|right|end"
+            style="@style/FabStyle" />
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>
+

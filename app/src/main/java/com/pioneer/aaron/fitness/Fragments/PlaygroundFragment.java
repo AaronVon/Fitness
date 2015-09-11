@@ -1,6 +1,7 @@
 package com.pioneer.aaron.fitness.Fragments;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -57,6 +58,18 @@ public class PlaygroundFragment extends Fragment {
         rootView = inflater.inflate(R.layout.playground_layout, container, false);
         initFragment();
         initView();
+        new AsyncTask() {
+            @Override
+            protected void onProgressUpdate(Object[] values) {
+                super.onProgressUpdate(values);
+            }
+
+            @Override
+            protected Object doInBackground(Object[] params) {
+
+                return null;
+            }
+        }.execute();
         return rootView;
     }
 
