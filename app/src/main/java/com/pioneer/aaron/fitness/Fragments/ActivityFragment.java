@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 
@@ -51,7 +53,7 @@ import java.util.Date;
 public class ActivityFragment extends Fragment {
 
     private View rootView;
-    private TextView textView;
+    private TextView beat_info, calories_info, distance_info;
     private int bpm_avg = 0, bpm_max = 0, bpm_min = 0,
             calories = 0,
             steps = 0,
@@ -74,6 +76,9 @@ public class ActivityFragment extends Fragment {
     //SQLite db
     private SQLiteDatabase database;
 
+    //animation
+    Animation fadeinAnimation, fadeoutAnimation;
+
     public static ActivityFragment newInstance() {
         return new ActivityFragment();
     }
@@ -87,7 +92,13 @@ public class ActivityFragment extends Fragment {
     }
 
     private void initFragment() {
-        textView = (TextView) rootView.findViewById(R.id.textView2);
+        fadeinAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.fade_in);
+        fadeinAnimation.setAnimationListener(animationListener);
+        fadeoutAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.fade_out);
+        fadeoutAnimation.setAnimationListener(animationListener);
+        beat_info = (TextView) rootView.findViewById(R.id.beat_info);
+        calories_info = (TextView) rootView.findViewById(R.id.calories_info);
+        distance_info = (TextView) rootView.findViewById(R.id.distance_info);
         mWheelIndicatorView = (WheelIndicatorView) rootView.findViewById(R.id.activity_indicator);
         stepIndicatorItem = new WheelIndicatorItem(steps, getResources().getColor(R.color.indicator_1));
         calorieIndicatorItem = new WheelIndicatorItem(calories, getResources().getColor(R.color.indicatior_2));
@@ -102,6 +113,23 @@ public class ActivityFragment extends Fragment {
 
         buildFitnessClient();
     }
+
+    private Animation.AnimationListener animationListener = new Animation.AnimationListener() {
+        @Override
+        public void onAnimationStart(Animation animation) {
+
+        }
+
+        @Override
+        public void onAnimationEnd(Animation animation) {
+
+        }
+
+        @Override
+        public void onAnimationRepeat(Animation animation) {
+
+        }
+    };
 
     private void insertDataIntoDB() {
         database = getActivity().openOrCreateDatabase(Constant.DB_NAME, getActivity().MODE_PRIVATE, null);
@@ -231,7 +259,22 @@ public class ActivityFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            textView.setText(bpm_avg + "\n" + calories + "\n" + distance + "\n" + steps);
+//            textView.setText(bpm_avg + "\n" + calories + "\n" + distance + "\n" + steps);
+            beat_info.setText("Beat " + bpm_avg);
+            beat_info.setVisibility(View.VISIBLE);
+            beat_info.setClickable(true);
+            beat_info.setOnClickListener(clickListener);
+
+            calories_info.setText("Calories " + calories);
+            calories_info.setVisibility(View.INVISIBLE);
+            calories_info.setClickable(false);
+            calories_info.setOnClickListener(clickListener);
+
+            distance_info.setText("Distance " + distance);
+            distance_info.setVisibility(View.INVISIBLE);
+            distance_info.setClickable(false);
+            distance_info.setOnClickListener(clickListener);
+
             stepIndicatorItem.setWeight(steps);
             distanceIndicatorItem.setWeight(distance);
             calorieIndicatorItem.setWeight(calories);
@@ -246,6 +289,35 @@ public class ActivityFragment extends Fragment {
 
         }
     }
+
+    private View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.beat_info:
+                    calories_info.setVisibility(View.VISIBLE);
+                    calories_info.startAnimation(fadeinAnimation);
+                    beat_info.startAnimation(fadeoutAnimation);
+                    calories_info.setClickable(true);
+                    beat_info.setClickable(false);
+                    break;
+                case R.id.calories_info:
+                    distance_info.setVisibility(View.VISIBLE);
+                    distance_info.startAnimation(fadeinAnimation);
+                    calories_info.startAnimation(fadeoutAnimation);
+                    distance_info.setClickable(true);
+                    calories_info.setClickable(false);
+                    break;
+                case R.id.distance_info:
+                    beat_info.setVisibility(View.VISIBLE);
+                    beat_info.startAnimation(fadeinAnimation);
+                    distance_info.startAnimation(fadeoutAnimation);
+                    beat_info.setClickable(true);
+                    distance_info.setClickable(false);
+                    break;
+            }
+        }
+    };
 
     /**
      * Return a {@link DataReadRequest} for all step count changes in the past week.

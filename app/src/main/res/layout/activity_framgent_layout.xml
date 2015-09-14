@@ -6,30 +6,51 @@
     android:layout_height="match_parent">
 
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
 
-        <com.dlazaro66.wheelindicatorview.WheelIndicatorView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/activity_indicator"
-            app:itemsLineWidth="13dp"
-            app:backgroundColor="@android:color/white"
-            android:layout_marginTop="35dp"
-            android:layout_marginBottom="35dp"
-            android:layout_centerHorizontal="true" />
+            <com.dlazaro66.wheelindicatorview.WheelIndicatorView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:paddingBottom="1000dp"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/activity_indicator"
+                app:itemsLineWidth="13dp"
+                app:backgroundColor="@android:color/white"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="35dp"
+                android:layout_centerHorizontal="true" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/textView2"
-            android:layout_below="@+id/activity_indicator"
-            android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center"
+                android:id="@+id/beat_info"
+                android:layout_alignTop="@+id/activity_indicator"
+                android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center"
+                android:id="@+id/calories_info"
+                android:layout_alignTop="@+id/activity_indicator"
+                android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center"
+                android:id="@+id/distance_info"
+                android:layout_alignTop="@+id/activity_indicator"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+    </ScrollView>
 
-    </RelativeLayout>
 </LinearLayout>
