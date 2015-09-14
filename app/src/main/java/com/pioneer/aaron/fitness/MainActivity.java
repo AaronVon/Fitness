@@ -24,6 +24,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.pioneer.aaron.fitness.Activities.MyAccountActivity;
+import com.pioneer.aaron.fitness.Activities.Settings;
 import com.pioneer.aaron.fitness.Fragments.ActivityFragment;
 import com.pioneer.aaron.fitness.Fragments.CircleFragment;
 import com.pioneer.aaron.fitness.Fragments.GamesFragment;
@@ -104,6 +105,10 @@ public class MainActivity extends AppCompatActivity {
                             fragmentManager.beginTransaction()
                                     .replace(R.id.main_content, GamesFragment.newInstance())
                                     .commit();
+                            break;
+                        case R.id.sub_settings:
+                            startActivity(new Intent(MainActivity.this, Settings.class));
+                            overridePendingTransition(R.anim.in_from_right, R.anim.keep);
                             break;
                     }
                 }

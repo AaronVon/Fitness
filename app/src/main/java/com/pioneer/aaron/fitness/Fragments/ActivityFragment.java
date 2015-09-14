@@ -53,7 +53,7 @@ import java.util.Date;
 public class ActivityFragment extends Fragment {
 
     private View rootView;
-    private TextView beat_info, calories_info, distance_info;
+    private TextView workout_info;
     private int bpm_avg = 0, bpm_max = 0, bpm_min = 0,
             calories = 0,
             steps = 0,
@@ -96,9 +96,9 @@ public class ActivityFragment extends Fragment {
         fadeinAnimation.setAnimationListener(animationListener);
         fadeoutAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.fade_out);
         fadeoutAnimation.setAnimationListener(animationListener);
-        beat_info = (TextView) rootView.findViewById(R.id.beat_info);
-        calories_info = (TextView) rootView.findViewById(R.id.calories_info);
-        distance_info = (TextView) rootView.findViewById(R.id.distance_info);
+        workout_info = (TextView) rootView.findViewById(R.id.workout_info);
+        workout_info.setOnClickListener(clickListener);
+
         mWheelIndicatorView = (WheelIndicatorView) rootView.findViewById(R.id.activity_indicator);
         stepIndicatorItem = new WheelIndicatorItem(steps, getResources().getColor(R.color.indicator_1));
         calorieIndicatorItem = new WheelIndicatorItem(calories, getResources().getColor(R.color.indicatior_2));
@@ -259,22 +259,7 @@ public class ActivityFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-//            textView.setText(bpm_avg + "\n" + calories + "\n" + distance + "\n" + steps);
-            beat_info.setText("Beat " + bpm_avg);
-            beat_info.setVisibility(View.VISIBLE);
-            beat_info.setClickable(true);
-            beat_info.setOnClickListener(clickListener);
-
-            calories_info.setText("Calories " + calories);
-            calories_info.setVisibility(View.INVISIBLE);
-            calories_info.setClickable(false);
-            calories_info.setOnClickListener(clickListener);
-
-            distance_info.setText("Distance " + distance);
-            distance_info.setVisibility(View.INVISIBLE);
-            distance_info.setClickable(false);
-            distance_info.setOnClickListener(clickListener);
-
+            workout_info.setText("Heart: " + bpm_avg);
             stepIndicatorItem.setWeight(steps);
             distanceIndicatorItem.setWeight(distance);
             calorieIndicatorItem.setWeight(calories);
@@ -291,29 +276,25 @@ public class ActivityFragment extends Fragment {
     }
 
     private View.OnClickListener clickListener = new View.OnClickListener() {
+        int i = 0;
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.beat_info:
-                    calories_info.setVisibility(View.VISIBLE);
-                    calories_info.startAnimation(fadeinAnimation);
-                    beat_info.startAnimation(fadeoutAnimation);
-                    calories_info.setClickable(true);
-                    beat_info.setClickable(false);
-                    break;
-                case R.id.calories_info:
-                    distance_info.setVisibility(View.VISIBLE);
-                    distance_info.startAnimation(fadeinAnimation);
-                    calories_info.startAnimation(fadeoutAnimation);
-                    distance_info.setClickable(true);
-                    calories_info.setClickable(false);
-                    break;
-                case R.id.distance_info:
-                    beat_info.setVisibility(View.VISIBLE);
-                    beat_info.startAnimation(fadeinAnimation);
-                    distance_info.startAnimation(fadeoutAnimation);
-                    beat_info.setClickable(true);
-                    distance_info.setClickable(false);
+                case R.id.workout_info:
+                    workout_info.startAnimation(fadeoutAnimation);
+                    switch (i % 3) {
+                        case 0:
+                            workout_info.setText("Calories: " + calories);
+                            break;
+                        case 1:
+                            workout_info.setText("Distance: " + distance);
+                            break;
+                        case 2:
+                            workout_info.setText("Heart: " + bpm_avg);
+                            break;
+                    }
+                    workout_info.startAnimation(fadeinAnimation);
+                    i++;
                     break;
             }
         }

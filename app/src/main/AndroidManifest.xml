@@ -27,6 +27,7 @@
             android:launchMode="singleTop"/>
         <activity android:name=".Activities.PlaygroundDetails" />
         <activity android:name=".Activities.CircleDetails" />
+        <activity android:name=".Activities.Settings" />
 
     </application>
 
