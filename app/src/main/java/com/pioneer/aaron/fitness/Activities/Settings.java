@@ -2,7 +2,6 @@ package com.pioneer.aaron.fitness.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
 import com.pioneer.aaron.fitness.R;
 
 /**

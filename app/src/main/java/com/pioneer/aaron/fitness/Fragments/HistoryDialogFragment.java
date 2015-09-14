@@ -41,6 +41,7 @@ public class HistoryDialogFragment extends DialogFragment {
     private void initFragment() {
         //remove the default header
         getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().setWindowAnimations(R.style.slideAnimation);
 
         Bundle mBundle = getArguments();
         this.year = mBundle.getInt(Constant.HIS_YEAR);
